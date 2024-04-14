@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import math as mt
+
 yvaluesMain = []
 beta = 10
 terms = 25
@@ -15,7 +17,7 @@ for i in range(1,terms +1 ):
     def thisRho(alpha,beta, sumToValue):
         sum_result = 0.000
         for n in range(1, i):
-            sum_result += (-1)**(n-1) * np.sin(beta * n) / n**alpha
+            sum_result += (-1)**(n-1) * np.sin(mt.log(beta * n)) / n**alpha
         return sum_result
 
     for alpha in alpha_values:
